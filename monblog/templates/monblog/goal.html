@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'monblog/CSS/accueil.css' %}">
+    <link rel="stylesheet" href="{% static 'monblog/CSS/trasaction.css' %}">
+    <title>Application de gestion financière</title>
+
+
+</head>
+<body>
+    <header>
+            <div class="container">
+                <h1>MonGestionnaire</h1>
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'monblog:accueil' %}">Accueil</a></li>
+                        <li><a href="{% url 'monblog:transaction' %}">Transactions</a></li>
+                        <li><a href="#">Objectifs financiers</a></li>
+                        <li><a href="{% url 'monblog:index' %}">Tableau de Bord Financier</a></li>
+
+                        {% if user.is_authenticated %}
+                            <p>Bienvenue {{ user.username }} ! | <a href="{% url 'account:logout' %}" class="logout-link">Déconnexion</a></p>
+                        {% else %}
+                            <a href="{% url 'account:login' %}" class="logout-link">Connexion</a>
+                            <a href="{% url 'account:register'  %}" class="logout-link">Inscription</a>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+    </header>
+<div class="container-form">
+        <div class="lela">
+            <h1>Mettez Votre Objectifs</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+
+</body>
+</html>

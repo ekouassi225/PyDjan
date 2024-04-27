@@ -1,0 +1,110 @@
+body{
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f0f0f0;
+     color: #333;
+
+}
+
+        /* Styles pour le header */
+    header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.logout-link {
+    color: white;
+    text-decoration: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.logout-link:hover {
+    background-color: #dddddd;
+}
+
+        /* Styles pour le footer */
+        footer {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Styles pour la barre de navigation */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-item {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navbar-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Styles pour les sections */
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h2 {
+            color: #333;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .lela{
+
+             text-align:center;
+
+        }

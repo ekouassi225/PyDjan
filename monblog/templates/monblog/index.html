@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'monblog/CSS/style.css' %}">
+    <title>Mon application de gestion des finances personnelles</title>
+
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur votre tableau de bord financier</h1>
+        {% if user.is_authenticated %}
+        <p>Bienvenue {{ user.username }} !| <a href="{% url 'account:logout' %}" class="logout-link">Déconnexion</a></p>
+    {% else %}
+        <a href="{% url 'account:login' %}" class="logout-link">Connexion</a>
+        <a href="{% url 'account:register'  %}" class="logout-link">Inscription</a>
+    {% endif %}
+    </header>
+
+    <div class="container">
+        <h2>Vos transactions récentes :</h2>
+        <ul>
+            {% for transaction in transactions %}
+                <li>{{ transaction.date }} - {{ transaction.type }}: {{ transaction.amount }}</li>
+            {% empty %}
+                <li>Aucune transaction à afficher</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Votre solde actuel : {{ balance }}</h2>
+
+        <h2>Vos objectifs financiers :</h2>
+        <ul>
+            {% for goal in goals %}
+                <li>{{ goal.name }} - Objectif: {{ goal.target_amount }}</li>
+            {% empty %}
+                <li>Aucun objectif défini</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>© 2024 Mon application de gestion des finances personnelles</p>
+    </footer>
+</body>
+</html>

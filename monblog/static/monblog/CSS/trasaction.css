@@ -1,0 +1,47 @@
+/* Style pour le titre "Ajouter une transaction" */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le formulaire */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style pour les champs du formulaire */
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Assure que la largeur inclut les bordures et le rembourrage */
+}
+
+/* Style pour le bouton "Ajouter la transaction" */
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
